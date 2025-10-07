@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicite seu Orçamento - Pontes Transportes</title>
+  <meta name="description" content="Solicite seu orçamento de mudança ou frete com a Pontes Transportes. Atendimento rápido e personalizado.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { golden: '#D4AF37' } } }
+    };
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <header class="bg-golden text-white py-6 shadow-md text-center">
+    <h1 class="text-3xl font-bold">Solicite seu Orçamento</h1>
+    <p class="text-lg">🚚 Atendimento rápido e personalizado</p>
+  </header>
+
+  <section class="py-12">
+    <div class="max-w-3xl mx-auto px-6">
+      <form id="whatsappForm" class="bg-white p-6 rounded-2xl shadow space-y-4">
+        <input type="text" id="nome" placeholder="Nome completo" required class="w-full border border-gray-300 rounded-md p-3">
+        <input type="text" id="origem" placeholder="Local de origem (Ex: Maringá - PR)" required class="w-full border border-gray-300 rounded-md p-3">
+        <input type="text" id="destino" placeholder="Local de destino (Ex: Sarandi - PR)" required class="w-full border border-gray-300 rounded-md p-3">
+        <input type="text" id="tipo" placeholder="Tipo de mudança (Residencial, comercial...)" required class="w-full border border-gray-300 rounded-md p-3">
+        <select id="montagem" class="w-full border border-gray-300 rounded-md p-3">
+          <option value="Sim">Com montagem/desmontagem</option>
+          <option value="Não">Sem montagem/desmontagem</option>
+        </select>
+        <input type="number" id="ajudantes" placeholder="Número de ajudantes" required class="w-full border border-gray-300 rounded-md p-3">
+        <input type="date" id="data" required class="w-full border border-gray-300 rounded-md p-3">
+
+        <button type="submit" class="w-full bg-golden text-white font-bold py-3 rounded-lg hover:bg-yellow-600 transition-all">
+          📲 Enviar pelo WhatsApp
+        </button>
+      </form>
+
+      <div class="text-center mt-8">
+        <a href="index.html" class="text-golden font-semibold hover:underline">⬅ Voltar para o início</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("whatsappForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const origem = document.getElementById("origem").value;
+      const destino = document.getElementById("destino").value;
+      const tipo = document.getElementById("tipo").value;
+      const montagem = document.getElementById("montagem").value;
+      const ajudantes = document.getElementById("ajudantes").value;
+      const data = document.getElementById("data").value;
+
+      const mensagem = `*📦 Solicitação de Orçamento - Pontes Transportes*%0A
+*Nome:* ${nome}%0A
+*Origem:* ${origem}%0A
+*Destino:* ${destino}%0A
+*Tipo de mudança:* ${tipo}%0A
+*Montagem/Desmontagem:* ${montagem}%0A
+*Ajudantes:* ${ajudantes}%0A
+*Data desejada:* ${data}`;
+
+      const url = `https://wa.me/5544988082565?text=${mensagem}`;
+      window.open(url, "_blank");
+    });
+  </script>
+
+  <footer class="bg-golden text-white text-center py-6 mt-12">
+    <p>&copy; 2025 Pontes Transportes - Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
