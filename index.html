@@ -8,13 +8,16 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: { extend: { colors: { golden: '#D4AF37' } } }
+      theme: {
+        extend: { colors: { golden: '#D4AF37' } },
+      },
     };
   </script>
 </head>
 
 <body class="bg-white text-gray-800 font-sans">
 
+  <!-- Cabeçalho -->
   <header class="bg-golden text-white py-6 shadow-md">
     <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
       <h1 class="text-3xl font-bold tracking-wide">Pontes Transportes</h1>
@@ -22,7 +25,8 @@
     </div>
   </header>
 
-  <section class="py-16 bg-gray-50 text-center">
+  <!-- Seção principal -->
+  <section class="py-12 bg-gray-50 text-center">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-4xl font-bold text-golden mb-4">Soluções completas em mudanças</h2>
       <p class="text-lg text-gray-700 mb-8">
@@ -31,15 +35,12 @@
       </p>
 
       <div class="flex flex-col md:flex-row justify-center gap-4">
+        <!-- Agora o botão leva para a nova página -->
         <a href="orcamento.html"
            class="bg-golden text-white font-semibold px-8 py-3 rounded-xl shadow-md hover:bg-yellow-600 transition-all">
           💬 Solicitar Orçamento
         </a>
-        <a href="https://wa.me/5544988082565?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20mudança."
-           target="_blank"
-           class="bg-green-600 text-white font-semibold px-8 py-3 rounded-xl shadow-md hover:bg-green-700 transition-all">
-          📲 Falar no WhatsApp
-        </a>
+
         <a href="https://www.instagram.com/pontes_tp/" target="_blank"
            class="border-2 border-golden text-golden font-semibold px-8 py-3 rounded-xl hover:bg-golden hover:text-white transition-all">
           📸 Instagram
@@ -48,6 +49,7 @@
     </div>
   </section>
 
+  <!-- Rodapé -->
   <footer class="bg-golden text-white text-center py-6 mt-12">
     <p>&copy; 2025 Pontes Transportes - Todos os direitos reservados.</p>
   </footer>
