@@ -8,11 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          colors: { golden: '#D4AF37' },
-        },
-      },
+      theme: { extend: { colors: { golden: '#D4AF37' } } }
     };
   </script>
 </head>
@@ -26,7 +22,7 @@
     </div>
   </header>
 
-  <section class="py-12 bg-gray-50 text-center">
+  <section class="py-16 bg-gray-50 text-center">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-4xl font-bold text-golden mb-4">Soluções completas em mudanças</h2>
       <p class="text-lg text-gray-700 mb-8">
@@ -35,9 +31,14 @@
       </p>
 
       <div class="flex flex-col md:flex-row justify-center gap-4">
-        <a href="https://wa.me/5544988082565?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20mudança." target="_blank"
+        <a href="orcamento.html"
            class="bg-golden text-white font-semibold px-8 py-3 rounded-xl shadow-md hover:bg-yellow-600 transition-all">
           💬 Solicitar Orçamento
+        </a>
+        <a href="https://wa.me/5544988082565?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20mudança."
+           target="_blank"
+           class="bg-green-600 text-white font-semibold px-8 py-3 rounded-xl shadow-md hover:bg-green-700 transition-all">
+          📲 Falar no WhatsApp
         </a>
         <a href="https://www.instagram.com/pontes_tp/" target="_blank"
            class="border-2 border-golden text-golden font-semibold px-8 py-3 rounded-xl hover:bg-golden hover:text-white transition-all">
@@ -45,52 +46,6 @@
         </a>
       </div>
     </div>
-  </section>
-
-  <section id="orcamento" class="bg-white py-12">
-    <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center text-golden mb-6">Solicite seu Orçamento Personalizado</h2>
-      <form id="whatsappForm" class="bg-gray-50 p-6 rounded-2xl shadow space-y-4">
-        <input type="text" id="nome" placeholder="Nome completo" required class="w-full border border-gray-300 rounded-md p-3 focus:border-golden focus:ring-golden outline-none">
-        <input type="text" id="origem" placeholder="Local de origem (Ex: Maringá - PR)" required class="w-full border border-gray-300 rounded-md p-3">
-        <input type="text" id="destino" placeholder="Local de destino (Ex: Sarandi - PR)" required class="w-full border border-gray-300 rounded-md p-3">
-        <input type="text" id="tipo" placeholder="Tipo de mudança (Residencial, comercial...)" required class="w-full border border-gray-300 rounded-md p-3">
-        <select id="montagem" class="w-full border border-gray-300 rounded-md p-3">
-          <option value="Sim">Com montagem/desmontagem</option>
-          <option value="Não">Sem montagem/desmontagem</option>
-        </select>
-        <input type="number" id="ajudantes" placeholder="Número de ajudantes" required class="w-full border border-gray-300 rounded-md p-3">
-        <input type="date" id="data" required class="w-full border border-gray-300 rounded-md p-3">
-        <button type="submit" class="w-full bg-golden text-white font-bold py-3 rounded-lg hover:bg-yellow-600 transition-all">
-          📲 Enviar pelo WhatsApp
-        </button>
-      </form>
-    </div>
-
-    <script>
-      document.getElementById("whatsappForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-        const nome = document.getElementById("nome").value;
-        const origem = document.getElementById("origem").value;
-        const destino = document.getElementById("destino").value;
-        const tipo = document.getElementById("tipo").value;
-        const montagem = document.getElementById("montagem").value;
-        const ajudantes = document.getElementById("ajudantes").value;
-        const data = document.getElementById("data").value;
-
-        const mensagem = `*📦 Solicitação de Orçamento - Pontes Transportes*%0A
-*Nome:* ${nome}%0A
-*Origem:* ${origem}%0A
-*Destino:* ${destino}%0A
-*Tipo de mudança:* ${tipo}%0A
-*Montagem/Desmontagem:* ${montagem}%0A
-*Ajudantes:* ${ajudantes}%0A
-*Data desejada:* ${data}`;
-
-        const url = `https://wa.me/5544988082565?text=${mensagem}`;
-        window.open(url, "_blank");
-      });
-    </script>
   </section>
 
   <footer class="bg-golden text-white text-center py-6 mt-12">
